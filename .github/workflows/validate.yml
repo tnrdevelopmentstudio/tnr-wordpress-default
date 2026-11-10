@@ -1,0 +1,17 @@
+name: Validate TNR WordPress default
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Bash syntax
+        run: bash -n scripts/apply-baseline.sh scripts/virtualmin-post-install.sh
+      - name: Check manifest JSON
+        run: python3 -m json.tool manifest/default.json >/dev/null
+      - name: Check dry-run never makes changes
+        run: bash scripts/apply-baseline.sh --path /home/EXAMPLE/public_html --owner example
