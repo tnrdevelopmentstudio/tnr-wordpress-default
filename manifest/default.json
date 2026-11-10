@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "package": "tnr-wordpress-default",
+  "package_version": "0.1.0",
+  "status": "pilot",
+  "wordpress_core": {
+    "installer": "virtualmin",
+    "version_policy": "latest_supported",
+    "bundled": false
+  },
+  "settings": {
+    "timezone_string": "America/Phoenix",
+    "default_comment_status": "closed",
+    "default_ping_status": "closed",
+    "permalink_structure": "unchanged",
+    "blog_public": "unchanged",
+    "theme": "unchanged",
+    "users": "unchanged"
+  },
+  "plugins": [
+    {
+      "slug": "tnr-new-site-splash",
+      "version": "1.0.0",
+      "repository": "tnrdevelopmentstudio/tnr-new-site-splash",
+      "commit": "cc60460a6dff71b65077e5463eadc43c144c78c1",
+      "activate": true
+    }
+  ],
+  "excluded_from_base": [
+    "woocommerce",
+    "customer_specific_themes",
+    "ruo_compliance_tools",
+    "staff_accounts",
+    "license_keys"
+  ]
+}
